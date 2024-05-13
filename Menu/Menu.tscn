@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceqw8iud3dys6"]
+
+[ext_resource type="Script" path="res://Menu/Menu.gd" id="1_p130c"]
+[ext_resource type="Texture2D" uid="uid://dl3oulqkwipiy" path="res://Sprite/backgrounds/menu_bg.jpg" id="2_jipm7"]
+[ext_resource type="Theme" uid="uid://dabd28u4kup32" path="res://Menu/Menu_theme.tres" id="3_1qx5i"]
+[ext_resource type="Script" path="res://Menu/Button.gd" id="3_q2fbv"]
+[ext_resource type="FontFile" uid="uid://dyih1pbyjkxt4" path="res://font/IMMORTAL.ttf" id="4_p2bie"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_p130c")
+
+[node name="MenuBg" type="Sprite2D" parent="."]
+position = Vector2(1060.33, 611.35)
+scale = Vector2(0.51466, 0.491091)
+texture = ExtResource("2_jipm7")
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 1715.0
+offset_top = 811.0
+offset_right = 2080.0
+offset_bottom = 872.0
+theme = ExtResource("3_1qx5i")
+theme_override_fonts/font = ExtResource("4_p2bie")
+theme_override_font_sizes/font_size = 25
+text = "New Game"
+script = ExtResource("3_q2fbv")
+
+[node name="Button2" type="Button" parent="."]
+texture_filter = 1
+offset_left = 1716.0
+offset_top = 897.0
+offset_right = 2079.0
+offset_bottom = 958.0
+theme = ExtResource("3_1qx5i")
+theme_override_fonts/font = ExtResource("4_p2bie")
+theme_override_font_sizes/font_size = 25
+text = "Crédit"
+script = ExtResource("3_q2fbv")
+
+[node name="Button3" type="Button" parent="."]
+texture_filter = 1
+offset_left = 1715.0
+offset_top = 980.0
+offset_right = 2078.0
+offset_bottom = 1041.0
+theme = ExtResource("3_1qx5i")
+theme_override_fonts/font = ExtResource("4_p2bie")
+theme_override_font_sizes/font_size = 25
+text = "Leave"
+script = ExtResource("3_q2fbv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 84.0
+offset_top = 21.0
+offset_right = 2163.0
+offset_bottom = 365.0
+theme_override_fonts/font = ExtResource("4_p2bie")
+theme_override_font_sizes/font_size = 100
+text = "LoneScape 
+Dungeon of Dimension"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

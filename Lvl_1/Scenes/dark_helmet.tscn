@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://chr8d4fyc57e8"]
+
+[ext_resource type="Script" path="res://Lvl_1/Scripts/dark_helmet.gd" id="1_5gg3v"]
+[ext_resource type="Texture2D" uid="uid://c3ljvb07vallr" path="res://Lvl_1/Assets/helmet/dark_helmet.png" id="2_j6xli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrp5w"]
+size = Vector2(30, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkv5p"]
+size = Vector2(18, 18)
+
+[node name="dark_helmet" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_5gg3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(2.13889, 1.97059)
+texture = ExtResource("2_j6xli")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_vrp5w")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+shape = SubResource("RectangleShape2D_jkv5p")
+target_position = Vector2(0, 0)
+collision_mask = 18
+collide_with_areas = true

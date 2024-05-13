@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqgvnrltmnun3"]
+
+[ext_resource type="Script" path="res://Lvl_1/Scripts/chest.gd" id="1_ch54s"]
+[ext_resource type="Texture2D" uid="uid://bo3alwogdortf" path="res://Lvl_1/Assets/Castle/PNG/Objects/chest_closed.png" id="2_q11kg"]
+[ext_resource type="Texture2D" uid="uid://vmv71q8uc350" path="res://Lvl_1/Assets/Castle/PNG/Objects/chest_opened.png" id="3_kgto2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2tlw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q11kg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kgto2")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gerih"]
+size = Vector2(49, 32)
+
+[node name="MysteryBox" type="StaticBody2D"]
+z_index = 2
+collision_layer = 16
+collision_mask = 13
+script = ExtResource("1_ch54s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.125, 2.125)
+sprite_frames = SubResource("SpriteFrames_c2tlw")
+animation = &"empty"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_gerih")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -10)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false

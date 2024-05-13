@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c7no4ybvdjpjt"]
+
+[ext_resource type="Texture2D" uid="uid://xxc5b77uqw0k" path="res://Sprite/fantasy_button/fantasy-ui-borders.svg" id="1_iuurp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ypsq"]
+texture = ExtResource("1_iuurp")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(414, 362, 48, 48)
+
+[resource]
+Label/styles/normal = SubResource("StyleBoxTexture_4ypsq")

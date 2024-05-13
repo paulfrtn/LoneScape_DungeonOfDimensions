@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdngrlii7wqds"]
+
+[ext_resource type="Script" path="res://Lvl_1/Scripts/sword.gd" id="1_dummt"]
+[ext_resource type="Texture2D" uid="uid://dxbw8pnmj32n3" path="res://Lvl_1/Assets/Attack/slash.png" id="2_subkn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gngp8"]
+atlas = ExtResource("2_subkn")
+region = Rect2(0, 0, 964, 575)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vkgj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gngp8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eokct"]
+size = Vector2(21.25, 18)
+
+[node name="sword" type="Area2D"]
+collision_layer = 64
+collision_mask = 190
+script = ExtResource("1_dummt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.034751, 0.0386958)
+sprite_frames = SubResource("SpriteFrames_4vkgj")
+autoplay = "default"
+frame_progress = 0.793843
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.375, 1)
+shape = SubResource("RectangleShape2D_eokct")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 5)
+collision_mask = 18
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

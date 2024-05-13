@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dscmko5h0dhso"]
+
+[ext_resource type="Script" path="res://Lvl_1/Scripts/flag.gd" id="1_51fdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ak86b"]
+size = Vector2(4.5, 247)
+
+[node name="Flag" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_51fdt")
+
+[node name="FlagSprite" type="Sprite2D" parent="."]
+position = Vector2(-33, -213.5)
+scale = Vector2(4.125, 2.8125)
+
+[node name="FlagPoleSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -128)
+scale = Vector2(1, 1.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, -128.5)
+shape = SubResource("RectangleShape2D_ak86b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

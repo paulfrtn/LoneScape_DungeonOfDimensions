@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq8gt0yj17fo6"]
+
+[ext_resource type="Texture2D" uid="uid://uihw3jdq7cpe" path="res://Sprite/backgrounds/win_bg.jpg" id="1_rxden"]
+[ext_resource type="Script" path="res://Lvl_3/Win.gd" id="1_s4pqa"]
+
+[node name="Win" type="Node2D"]
+script = ExtResource("1_s4pqa")
+
+[node name="WinBg" type="Sprite2D" parent="."]
+position = Vector2(1117, 627.5)
+scale = Vector2(4.18148, 3.53611)
+texture = ExtResource("1_rxden")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

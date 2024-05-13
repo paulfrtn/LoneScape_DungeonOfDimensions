@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0tf1mrvpnrr7"]
+
+[ext_resource type="Script" path="res://Lvl_3/Player/player.gd" id="1_a113g"]
+[ext_resource type="Texture2D" uid="uid://dkbwwu7ekxpev" path="res://Sprite/boss_sprites/GUI-Kit-Pack-Free_13.png" id="2_a3obq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ug6ns"]
+radius = 27.0185
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_a113g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a3obq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ug6ns")
