@@ -1,2 +1,4 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
+*.exe filter=lfs diff=lfs merge=lfs -text
+GameLauncher/LoneScape_DungeonOfDimension.exe filter=lfs diff=lfs merge=lfs -text
